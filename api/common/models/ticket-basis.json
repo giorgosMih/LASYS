@@ -1,0 +1,48 @@
+{
+  "name": "TicketBasis",
+  "plural": "TicketBasis",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "number"
+    },
+    "code": {
+      "type": "string",
+      "required": true,
+      "mysql": {
+        "dataType": "VARCHAR",
+        "dataLength": 8
+      }
+    },
+    "reservationMinDays": {
+      "type": "number",
+      "default": 0
+    },
+    "confirmationMinDays": {
+      "type": "number",
+      "default": 0
+    },
+    "changeMinDays": {
+      "type": "number",
+      "default": 0
+    },
+    "classID": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "class": {
+      "type": "belongsTo",
+      "model": "Class",
+      "foreignKey": "classID"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

@@ -1,0 +1,32 @@
+{
+	"name": "Flight",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+	"properties": {
+		"id": {
+			"type": "number",
+			"id": true,
+			"generated": true
+		}
+	},
+	"validations": [],
+	"relations": {
+		"classCosts": {
+			"type": "hasMany",
+			"model": "FlightCost",
+			"foreignKey": "flightID"
+		},
+		"flightLegs": {
+			"type": "hasMany",
+			"model": "FlightLeg",
+			"foreignKey": "flightID",
+			"keyThrough": "legID",
+			"through": "FlightLegMapping"
+		}
+	},
+	"acls": [],
+	"methods": {}
+}

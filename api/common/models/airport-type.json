@@ -1,0 +1,29 @@
+{
+  "name": "AirportType",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "number",
+      "id": true,
+      "generated": true
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "airports": {
+      "type": "hasMany",
+      "model": "Airport",
+      "foreignKey": "typeID"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

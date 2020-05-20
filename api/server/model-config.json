@@ -1,0 +1,91 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "AccessToken": {
+    "dataSource": "db",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "mysql",
+    "public": true
+  },
+  "RoleMapping": {
+    "dataSource": "mysql",
+    "public": true,
+    "options": {
+      "strictObjectIDCoercion": true
+    }
+  },
+  "Role": {
+    "dataSource": "mysql",
+    "public": true
+  },
+  "AppUser": {
+    "dataSource": "mysql",
+    "public": true
+  },
+  "Passenger": {
+    "dataSource": "mysql",
+    "public": true
+  },
+  "SeatAllocation": {
+    "dataSource": "mysql",
+    "public": true
+  },
+  "SeatingPlan": {
+    "dataSource": "mysql",
+    "public": true
+  },
+  "FlightLeg": {
+    "dataSource": "mysql",
+    "public": true
+  },
+  "Class": {
+    "dataSource": "mysql",
+    "public": true
+  },
+  "FlightType": {
+    "dataSource": "mysql",
+    "public": true
+  },
+  "Airport": {
+    "dataSource": "mysql",
+    "public": true
+  },
+  "AirportType": {
+    "dataSource": "mysql",
+    "public": true
+  },
+  "AircraftType": {
+    "dataSource": "mysql",
+    "public": true
+  },
+  "TicketBasis": {
+    "dataSource": "mysql",
+    "public": true
+  },
+  "Flight": {
+    "dataSource": "mysql",
+    "public": true
+  },
+  "FlightCost": {
+    "dataSource": "mysql",
+    "public": true
+  },
+  "FlightLegMapping": {
+    "dataSource": "mysql",
+    "public": true
+  }
+}

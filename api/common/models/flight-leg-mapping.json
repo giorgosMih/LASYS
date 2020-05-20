@@ -1,0 +1,30 @@
+{
+	"name": "FlightLegMapping",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+	"properties": {
+		"id": {
+			"type": "number",
+			"id": true,
+			"generated": true
+		}
+	},
+	"validations": [],
+	"relations": {
+		"flight":{
+			"type":"belongsTo",
+			"model":"Flight",
+			"foreignKey":"flightID"
+		},
+		"leg":{
+			"type":"belongsTo",
+			"model":"FlightLeg",
+			"foreignKey":"legID"
+		}
+	},
+	"acls": [],
+	"methods": {}
+}

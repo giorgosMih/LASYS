@@ -1,0 +1,66 @@
+{
+	"name": "FlightLeg",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+	"properties": {
+		"id": {
+			"type": "number",
+			"id": true,
+			"generated": true
+		},
+		"flightNumber": {
+			"type": "string",
+			"required": true
+		},
+		"originAirportID": {
+			"type": "number",
+			"required": true
+		},
+		"destinationAirportID": {
+			"type": "number",
+			"required": true
+		},
+		"departureDate": {
+			"type": "date",
+			"required": true
+		},
+		"arrivalDate": {
+			"type": "date",
+			"required": true
+		},
+		"gate": {
+			"type": "string",
+			"required": true
+		}
+	},
+	"validations": [],
+	"relations": {
+		"origin": {
+			"type": "belongsTo",
+			"model": "Airport",
+			"foreignKey": "originAirportID"
+		},
+		"destination": {
+			"type": "belongsTo",
+			"model": "Airport",
+			"foreignKey": "destinationAirportID"
+		},
+		"aircraft": {
+			"type": "belongsTo",
+			"model": "AircraftType",
+			"foreignKey": "aircraftTypeID"
+		},
+		"flights": {
+			"type": "hasMany",
+			"model": "Flight",
+			"foreignKey": "legID",
+			"keyThrough": "flightID",
+			"through": "FlightLegMapping"
+		}
+	},
+	"acls": [],
+	"methods": {}
+}

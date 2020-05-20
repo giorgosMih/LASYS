@@ -1,0 +1,33 @@
+{
+  "name": "AircraftType",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "number",
+      "id": true,
+      "generated": true
+    },
+    "shortName": {
+      "type": "string",
+      "required": true
+    },
+    "fullName": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "flightLegs": {
+      "type": "hasMany",
+      "model": "FlightLeg",
+      "foreignKey": "aircraftTypeID"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

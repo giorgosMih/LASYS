@@ -1,0 +1,42 @@
+{
+  "name": "FlightCost",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "number",
+      "id": true,
+      "generated": true
+    },
+    "cost": {
+      "type": "number",
+      "required": true
+    },
+    "flightID": {
+      "type": "number",
+      "required": true
+    },
+    "classID": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "flight": {
+      "type": "belongsTo",
+      "model": "Flight",
+      "foreignKey": "flightID"
+    },
+    "class": {
+      "type": "belongsTo",
+      "model": "Class",
+      "foreignKey": "classID"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

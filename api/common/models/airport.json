@@ -1,0 +1,50 @@
+{
+  "name": "Airport",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "number",
+      "id": true,
+      "generated": true
+    },
+    "IATACode": {
+      "type": "string",
+      "required": true,
+      "index": {
+        "unique": true
+      }
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "typeID": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "type": {
+      "type": "belongsTo",
+      "model": "AirportType",
+      "foreignKey": "typeID"
+    },
+    "flightsFrom": {
+      "type": "hasMany",
+      "model": "FlightLeg",
+      "foreignKey": "originAirportID"
+    },
+    "flightsTo": {
+      "type": "hasMany",
+      "model": "FlightLeg",
+      "foreignKey": "destinationAirportID"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

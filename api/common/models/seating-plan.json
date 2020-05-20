@@ -1,0 +1,25 @@
+{
+  "name": "SeatingPlan",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "number",
+      "id": true,
+      "generated": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "allocations": {
+      "type": "hasMany",
+      "model": "SeatAllocation",
+      "foreignKey": "allocationID"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

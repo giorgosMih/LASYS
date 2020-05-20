@@ -1,0 +1,42 @@
+{
+  "name": "Class",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "number",
+      "id": true,
+      "generated": true
+    },
+    "code": {
+      "type": [
+        "string"
+      ],
+      "required": true
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "basis": {
+      "type": "hasMany",
+      "model": "TicketBasis",
+      "foreignKey": "classID"
+    },
+    "flightCosts": {
+      "type": "hasMany",
+      "model": "Flight",
+      "foreignKey": "classID",
+      "keyThrough": "flightID",
+      "through": "FlightCost"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

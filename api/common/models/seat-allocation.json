@@ -1,0 +1,43 @@
+{
+  "name": "SeatAllocation",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "number",
+      "id": true,
+      "generated": true
+    },
+    "seatNumber": {
+      "type": "string",
+      "required": true
+    },
+    "isSmoking": {
+      "type": "boolean",
+      "required": true
+    },
+    "isWindow": {
+      "type": "boolean",
+      "required": true
+    },
+    "specialNeeds": {
+      "type": "string"
+    },
+    "baggageWeight": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "seatingPlan": {
+      "type": "belongsTo",
+      "model": "SeatingPlan",
+      "foreignKey": "allocationID"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
